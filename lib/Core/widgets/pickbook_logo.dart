@@ -23,9 +23,21 @@ class PickbookLogo extends StatelessWidget {
       _getAssetPath(),
       width: _getWidth(),
       height: _getHeight(),
+      fit: BoxFit.contain,
       colorFilter: color != null
           ? ColorFilter.mode(color!, BlendMode.srcIn)
           : null,
+      placeholderBuilder: (BuildContext context) => Container(
+        width: _getWidth(),
+        height: _getHeight(),
+        decoration: BoxDecoration(
+          color: Colors.grey[300],
+          borderRadius: BorderRadius.circular(8),
+        ),
+        child: const Center(
+          child: Icon(Icons.book, color: Colors.grey, size: 24),
+        ),
+      ),
     );
   }
 
