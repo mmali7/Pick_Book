@@ -10,3 +10,4 @@ const kDarkGrayColor = Color(0xFF334155); // Dark Gray - Text and details
 // Legacy support (keeping for backward compatibility)
 const kBackgroundColor = kLightGrayColor;
 const kTextColor = kSecondaryColor;
+const kTransitionDuration = Duration(milliseconds: 230);

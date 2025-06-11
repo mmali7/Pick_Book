@@ -1,7 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:get/get_connect/http/src/utils/utils.dart';
+import 'package:pick_book/constants.dart';
 import '../../../../core/theme/app_colors.dart';
 import '../../../../core/animations/app_animations.dart';
+import '../../Domain/views/home_view.dart';
 import '../controllers/splash_controller.dart';
 import 'modern_logo_widget.dart';
 import 'animated_logo_widget.dart';
@@ -26,6 +29,17 @@ class _SplashViewBodyState extends State<SplashViewBody>
     super.initState();
     _initializeAnimationControllers();
     _startAnimationSequence();
+    _navigateToHome();
+  }
+
+  void _navigateToHome() {
+    Future.delayed(const Duration(seconds: 2), () {
+      Get.to(
+        () => HomeView(),
+        transition: Transition.fadeIn,
+        duration: kTransitionDuration,
+      );
+    });
   }
 
   void _initializeAnimationControllers() {
